@@ -1,31 +1,37 @@
-import Heading from '../components/Heading';
+import { useState } from 'react';
 import SubHeading from '../components/SubHeading';
-import InputBox from '../components/InputBox';
 import Button from '../components/Button';
 import GoogleButton from '../components/GoogleButton';
+import Heading from '../components/Heading';
+import InputBox from '../components/InputBox';
 
 export default function Signup() {
   return (
-    <div className="min-h-screen bg-white flex flex-col lg:flex-row">
-      <div className="w-full lg:w-1/2 p-8 flex flex-col justify-center">
-        <Heading label="NGO NAME" />
-        <SubHeading label="SIGNUP" />
-          <InputBox placeholder="NAME" />
-          <InputBox placeholder="EMAIL" />
-          <InputBox placeholder="PASSWORD" type="password" />
-          <InputBox placeholder="CONFIRM PASSWORD" type="password" />
-          <InputBox placeholder="REGISTRATION TYPE" type="select" />
-          <Button label="Sign Up" onClick={() => {}} />
-          <GoogleButton onClick={() => {}} />
-      </div>
+    <div className="min-h-screen flex flex-col lg:flex-row bg-white">
+      <div className="w-full lg:w-1/2 flex items-center justify-center p-8 bg-white">
+        <div className="w-full max-w-sm">
+          <div className="mb-8">
+            <Heading label={"NGO NAME"} />
+            <SubHeading label={"SIGNUP"} />
+          </div>
 
-      <div className="hidden lg:flex w-full lg:w-1/2 items-center justify-center p-8">
-        <img
-          src="../assets/image.png"
-          alt="NGO"
-          className="max-w-full h-auto"
-        />
+          <div className="space-y-6">
+            <InputBox placeholder="NAME" />
+            <InputBox placeholder="EMAIL" type="email" />
+            <InputBox placeholder="PASSWORD" type="password" />
+            <InputBox placeholder="CONFIRM PASSWORD" type="password" />
+            <InputBox placeholder="REGISTRATION TYPE" type="select" />
+          </div>
+
+          <div className="mt-8">
+            <Button label="Sign Up" onClick={() => {}} className="w-full" />
+          </div>
+
+          <GoogleButton onClick={() => {}} />
+        </div>
+      </div>
+      <div className="w-full lg:w-2/5 flex items-center justify-center p-8 bg-white">
+        <img src="./picture.png" alt="" />
       </div>
     </div>
-  );
-}
+)}
